@@ -17,10 +17,13 @@ func handleGet(w http.ResponseWriter, r *http.Request) {
     case "GET":
         t1 := time.Now()
         req_id := r.Header.Get("vcap_request_id")
-        fmt.Println("Received GET request for vcap_req_id=", req_id, " at ", t1.Format("2006-01-02T15:04:05.999999-07:00"))
 
+        // Sleep for 1 second
+        time.Sleep(1 * time.Second)
         t2 := time.Now()
-        fmt.Println("Processed GET request for vcap_req_id=", req_id, " at ", t2.Format("2006-01-02T15:04:05.999999-07:00"))
+
+        nsec := t2.UnixNano() - t1.UnixNano()
+        fmt.Println("App processing time for vcap_req_id=", req_id, " is ", nsec, "nanoseconds")
 
     default:
         fmt.Println("Sorry, only GET method is supported.")
