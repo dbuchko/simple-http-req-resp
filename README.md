@@ -1,5 +1,5 @@
 # simple-http-req-resp
-simple app that logs a timestamp on an HTTP GET request.
+Simple app that logs app processing time on an HTTP GET request.  Can be used to measure router latency.
 <p>
 Cross compile for linux diego cells using:
   <p>
