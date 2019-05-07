@@ -19,7 +19,7 @@ func handleGet(w http.ResponseWriter, r *http.Request) {
         req_id := r.Header.Get("vcap_request_id")
 
         // Sleep for 1 second
-        time.Sleep(1 * time.Second)
+        time.Sleep(50 * time.Millisecond)
         t2 := time.Now()
 
         nsec := t2.UnixNano() - t1.UnixNano()
