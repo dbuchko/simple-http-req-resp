@@ -16,7 +16,7 @@ func handleGet(w http.ResponseWriter, r *http.Request) {
     switch r.Method {
     case "GET":
         t1 := time.Now()
-        req_id := r.Header.Get("vcap_request_id")
+        req_id := r.Header.Get("X-Vcap-Request-Id")
 
         // Sleep for 1 second
         time.Sleep(50 * time.Millisecond)

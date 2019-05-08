@@ -12,5 +12,5 @@ cf push simplereqresp -c'./simple-http-req-resp' -b binary_buildpack -k 64m -m 6
 <p>
   Can test by curling the app like:
   <p>
-  curl -X GET -H "vcap_request_id: myid" --verbose https://simplereqresp.<Apps Route>
+  curl -X GET -H "X-Vcap-Request-Id: myid" --verbose https://simplereqresp.<Apps Route>
 <p>
